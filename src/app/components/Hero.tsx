@@ -13,7 +13,7 @@ const Hero = () => {
             </div>
         </div>
         <div className="image">
-            <Image src={"/static/img2.jfif"} alt='' width={1000} height={500}></Image>
+            <Image src={"/static/img2.jpg"} alt='' width={500} height={500}></Image>
         </div>
     </div>
     </div>

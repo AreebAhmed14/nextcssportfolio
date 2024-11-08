@@ -3,11 +3,18 @@ import React from 'react'
 import { TiThMenu } from "react-icons/ti";
 import { MdCancel } from "react-icons/md";
 import Link from 'next/link';
+import { useState } from 'react';
 
-function openmenu(){
-    
-}
+
+
 const Header = () => {
+const [menu, setMenu] = useState(false);
+function openmenu(){
+  setMenu(!menu)
+}
+function closeii(){
+  setMenu(false)
+}
   return (
     <div>
        <header>
@@ -23,12 +30,12 @@ const Header = () => {
             <TiThMenu onClick={openmenu} id='open'/>
         </div>
         </nav>
-        <div className="box" id="boxx">
-            <div className="items"><MdCancel id='close'/></div>
-            <div className="items"><Link href={"/"}>HOME</Link></div>
-            <div className="items"><Link href={"/About"}>ABOUT ME</Link></div>
-            <div className="items"><Link href={"/Education"}>EDUCATION</Link></div>
-            <div className="items"><Link href={"/Projects"}>PROJECTS</Link></div>
+        <div className={`${menu?"box2":"box"}`} id="boxx">
+            <div className="items inneritem"><MdCancel onClick={closeii} id='close'/></div>
+            <div onClick={closeii} className="items"><Link href={"/"}>HOME</Link></div>
+            <div onClick={closeii} className="items"><Link href={"/About"}>ABOUT ME</Link></div>
+            <div onClick={closeii} className="items"><Link href={"/Education"}>EDUCATION</Link></div>
+            <div onClick={closeii} className="items"><Link href={"/Projects"}>PROJECTS</Link></div>
         </div>
     </header>
     </div>
